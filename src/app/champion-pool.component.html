@@ -1,0 +1,24 @@
+<h1>This is the Champion-Pool component</h1>
+<h4>Here are the champions inside of your champion pool</h4>
+
+<!-- input field + addChampToPool -->
+<div class="input-group mb-3">
+    <input #newChampion type="text" class="form-control" placeholder="literally any champion dude"
+        aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <button class="btn btn-primary" (click)="addChampionToPool()">Add Champion</button>
+</div>
+
+
+<div class="row">
+    <div class="col md">
+        <a *ngFor="let champion of championPool">
+            <img [routerLink]="'/champion-pool/'+champion.name" (click)="showChamp()" #championDetail
+                class="champion-pool-icons" src="{{champion.icon}}" alt="{{champion.name}} icon">
+        </a></div>
+
+</div>
+<hr>
+<!-- Alright Next task is to link up both components so you can display the champ you click on -->
+<div>
+    <app-champion *ngIf="showDetail"></app-champion>
+</div>

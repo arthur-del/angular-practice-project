@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-1">
+            <!-- <img src={{currentChampion.icon}} /> -->
+            
+        </div>
+        <div class="pull-left col-xs-12">
+            <h2>{{currentChampion.name}}</h2>
+            <h4>{{currentChampion.title}}</h4>
+        </div>
+    </div>
+  
+    <p>{{currentChampion.blurb}}</p>
+    <hr>
+    <table class="table">
+        <tr>
+            <td>Armor: {{armor}}</td>
+            <td>Armor per level: {{currentChampion.stats.armorperlevel}}</td>
+        </tr>
+        <tr>
+            <td>Magic resist: {{mr}}</td>
+            <td>Magic resist per level: {{currentChampion.stats.spellblockperlevel}}</td>
+        </tr>
+        <tr>
+            <td>Attack damage: {{ad}}</td>
+            <td>Attack damage per level:  {{currentChampion.stats.attackdamageperlevel}}</td>
+        </tr>
+        <tr>
+            <td>Attack speed: {{asp}}</td>
+            <td>Attack speed per level: {{currentChampion.stats.attackspeedperlevel}}</td>
+        </tr>
+        <tr>
+            <td>Critical strike: {{cs}}</td>
+            <td>Critical strike per level: {{currentChampion.stats.critperlevel}}</td>
+        </tr>
+        <tr>
+            <td>Heath: {{hp}}</td>
+            <td>Health per level: {{currentChampion.stats.hpperlevel}}</td>
+        </tr>
+        <tr>
+            <td>Health regen: {{hpr}}</td>
+            <td>Health regen per level: {{currentChampion.stats.hpregenperlevel}}</td>
+        </tr>
+        <tr>
+            <td>Attack range: {{currentChampion.stats.attackrange}}</td>
+            <td> Movement speed: {{currentChampion.stats.movespeed}}</td>
+        </tr>
+        <tr>
+            <td>Mana: {{mp}}</td>
+            <td>Mana per level: {{currentChampion.stats.mpperlevel}}</td>
+        </tr>
+        <tr>
+            <td>Mana regen: {{mpr}}</td>
+            <td>Mana regen per level: {{currentChampion.stats.mpregenperlevel}}</td>
+        </tr>
+        <tr>
+            <td>Champion level: <input #championLevel ng-model type="number" (input)="updateGrid()"  placeholder="1"> </td>
+            
+        </tr>
+        
+    </table>
+
+    <hr>
+</div>
