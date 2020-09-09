@@ -1,7 +1,6 @@
-import { Component, OnInit, ElementRef, ViewChild, OnChanges } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Champion } from '../champion.interface';
 import { ChampionService } from '../champion.service';
-import { Observer } from 'rxjs'
 import { Router, ActivatedRoute } from '@angular/router';
 
 
@@ -10,6 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './champion.component.html',
   styleUrls: ['./champion.component.css']
 })
+
 export class ChampionComponent implements OnInit {
 
   constructor(private championService: ChampionService, private router: Router, private activatedRoute: ActivatedRoute) { }

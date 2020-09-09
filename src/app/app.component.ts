@@ -1,5 +1,4 @@
 import { Component, OnChanges } from '@angular/core';
-import { } from '';
 import { Router } from '@angular/router';
 
 @Component({

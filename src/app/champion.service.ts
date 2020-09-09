@@ -1,7 +1,6 @@
-import { Injectable, OnInit } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Champion } from './champion.interface';
 import championFile from './dataset/champion.json';
-import { Observable, Subject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -11,8 +10,7 @@ export class ChampionService {
 
     championDictionnary = championFile; // get champion data from file
     championsArray: Champion[] = this.formatChampionData(); // array of all the champions according the champion interface
-    championPool = new Observable<Champion[]>(); // needs to be an observable for others in champion and champion pool
-    currentChampion = new Subject<Champion>(); // needs to be an observable for others in champion and champion pool
+    championPool : Champion[] = []; // needs to be an observable for others in champion and champion pool
     
     constructor() { }
 
@@ -28,19 +26,8 @@ export class ChampionService {
             return obj.name === name;
         })
     }
-    //returns the currently selected champion for viewing
-    getCurrentChampion(){
-        return this.currentChampion;
-    }
-    setCurrentChampion(champion: Champion){
-        // this.currentChampion = this.getChampion(champion);
-        this.currentChampion.next(champion)
-        console.log(champion)
-        console.log('Inside champion service:', this.currentChampion)
-    }
     addChampionToPool(updatedPool: Champion[]) {
-        this.championPool.next(updatedPool)
-        // console.log('Inside champion service: ',this.championPool)
+       this.championPool = updatedPool;
       }
     // Translates the json file into a championsArray
     formatChampionData() {

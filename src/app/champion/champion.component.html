@@ -1,3 +1,6 @@
+<!-- Commented out code needs to be decided whether i keep or not -->
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-1">
@@ -10,8 +13,8 @@
         </div>
     </div>
   
-    <p>{{currentChampion.blurb}}</p>
-    <hr>
+    <!-- <p>{{currentChampion.blurb}}</p> -->
+    
     <table class="table">
         <tr>
             <td>Armor: {{armor}}</td>
@@ -54,7 +57,7 @@
             <td>Mana regen per level: {{currentChampion.stats.mpregenperlevel}}</td>
         </tr>
         <tr>
-            <td>Champion level: <input #championLevel ng-model type="number" (input)="updateGrid()"  placeholder="1"> </td>
+            <td>Champion level: <input #championLevel ng-model type="number" (input)="updateGrid()"  placeholder="1" min="1" max="18" > </td>
             
         </tr>
         

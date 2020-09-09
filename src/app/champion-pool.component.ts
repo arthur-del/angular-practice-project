@@ -19,10 +19,12 @@ export class championPoolComponent implements OnInit {
     showChamp() {
         this.showDetail = !this.showDetail;
     }
+
     addChampionToPool() {
         let championName: string = this.newChampion.nativeElement.value
 
-        if (this.championService.getChampion(championName)) {
+        if (this.championService.getChampion(championName) && !(this.championService.championPool.includes(this.championService.getChampion(championName)))) {
+
             this.championPool.push(this.championService.getChampion(championName));
             this.championService.addChampionToPool(this.championPool);
         }
@@ -30,17 +32,8 @@ export class championPoolComponent implements OnInit {
     }
 
 
-    chooseChampLevel(level: number) { }
-
     ngOnInit() {
-        this.championService.championPool
-            .subscribe(
-                (championPool: Champion[]) => {
-                    this.championPool = championPool;
-                }
-            );
-
-
+    
     }
 
 
